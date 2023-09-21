@@ -20,12 +20,14 @@ const Sidebar = () => {
         {
             label:'Notifications',
             href:'/notifications',
-            icon: BsBellFill
+            icon: BsBellFill,
+            auth: true
         },
         {
             label: 'Profile',
             href: '/users/123',
-            icon: FaUser
+            icon: FaUser,
+            auth: true
         }
     ]
     return (
@@ -33,7 +35,7 @@ const Sidebar = () => {
         <div className='flex flex-col items-end'>
             <div className='space-y-2 lg:w-[230px]'>
             <SidebarLogo />
-            {items.map((item) => (<SidebarItem key={item.href} href={item.href} label={item.label} icon={item.icon}
+            {items.map((item) => (<SidebarItem key={item.href} href={item.href} label={item.label} icon={item.icon} auth={item.auth}
                 />))}
                 {currentUser && (
                 <SidebarItem onClick={() => signOut()} icon={BiLogOut} label='Logout' /> )}
