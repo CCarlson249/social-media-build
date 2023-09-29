@@ -116,6 +116,6 @@ const PostItem: React.FC<PostItemProps> = ({
         </div>
     </div>
   )
-}
+  }
 
 export default PostItem;
