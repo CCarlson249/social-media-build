@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { ClipLoader } from "react-spinners";
 import Header from "@/components/Header";
 import PostItem from "@/components/posts/PostItem";
+import Form from "@/components/Form";
 
 
 const PostView = () => {
@@ -22,6 +23,10 @@ const PostView = () => {
     <>
     <Header label='Tweet' showBackArrow />
     <PostItem data={fetchedPost} />
+    <Form
+    postId={postId as string}
+    isComment
+    placeholder="Tweet your reply" />
     </>
   )
 }
